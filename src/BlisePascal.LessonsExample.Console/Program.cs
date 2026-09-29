@@ -1,4 +1,6 @@
-﻿public class Program // Questa è una classe
+﻿using BlaisePascal.LessonsExample.Domain;
+
+public class Program // Questa è una classe
 {
     // Metodo di entrata per esecuzione del codice
     public static void Main()
@@ -23,5 +25,6 @@
         Console.WriteLine("Il tipo di consegna selezionata è: " + tipoConsegna);
         Console.WriteLine(costoTotale);
 
+        Enemy newEnemy = new Enemy();
     }
 }
