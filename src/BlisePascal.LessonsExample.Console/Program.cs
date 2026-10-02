@@ -7,24 +7,70 @@ public class Program // Questa è una classe
     {
        
 
-        Console.WriteLine("Inserisci i nome del cliente: "); // stampo a video il messaggio della richiesta
-        string nomeCliente = Console.ReadLine(); // dichiarazione + assegnazione
+        Console.WriteLine("Inserisci il nome del cliente: "); 
+        string customerName = Console.ReadLine(); 
 
-        Console.WriteLine($"Benvenuto {nomeCliente} nella Easy Class 3E");
-        string tipoConsegna = Console.ReadLine(); // dichiarazione
+        Console.WriteLine("Inserisci il numero di libri acquistati: ");
+        int numberOfBooks = int.Parse(Console.ReadLine());
 
-        int costoSpedizioneSingoloPacco = 5; // dichiarazione + assegnazione
-        costoSpedizioneSingoloPacco = 10; // assegnazione
+        Console.WriteLine("Inserisci il prezzo di un singolo libro: ");
+        double bookPrice = double.Parse(Console.ReadLine());
 
-        int numeroPacchiComprati = int.Parse(Console.ReadLine());
+        Console.WriteLine("Sei uno studente? (true/false): ");
+        bool isStudent = bool.Parse(Console.ReadLine());
 
+        Console.WriteLine("Inserisci il tipo di consegna (spedizione/ritiro): ");
+        string deliveryType = Console.ReadLine();
+
+        double subtotal = numberOfBooks * bookPrice;
+
+        int shipping = 0;
+
+        if(deliveryType == "spedizione")
+        {
+            shipping = 5;
+        }else if (deliveryType == "ritiro")
+        {
+            
+        }else
+        {
+            Console.WriteLine("Tipo di consegna non valido.");
+        }
+
+        double total = subtotal + shipping;
+
+        Console.WriteLine();
+        Console.WriteLine("===== ORDINE =====");
+
+        Console.WriteLine("Cliente: " + customerName);
+        Console.WriteLine("Libri acquistati: " + numberOfBooks);
+        Console.WriteLine("Prezzo unitario: " + bookPrice + " euro");
+        Console.WriteLine("Studente: " + isStudent);
+        Console.WriteLine("Tipo di consegna: " + deliveryType);
+        Console.WriteLine("Subtotale: " + subtotal + " euro");
+        Console.WriteLine("Spese di spedizione: " + shipping + " euro");
+        Console.WriteLine("Totale finale: " + total + " euro");
+
+        Console.WriteLine();
+
+        if(total <= 0)
+        {
+            Console.WriteLine("Errore: ordine non valido.");
+
+        }
+        else if(total < 20)
+        {
+            Console.WriteLine("Ordine di piccolo importo");
+        }else
+        {
+            Console.WriteLine("Ordine di grande importo");
+        }
+
+        Console.WriteLine("Grazie per il tuo ordine!");
+        
         
 
-        int costoTotale = costoSpedizioneSingoloPacco * numeroPacchiComprati;
 
-        Console.WriteLine("Il tipo di consegna selezionata è: " + tipoConsegna);
-        Console.WriteLine(costoTotale);
 
-        Enemy newEnemy = new Enemy();
-    }
+        }
 }
