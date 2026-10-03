@@ -3,10 +3,10 @@
 public class Program // Questa è una classe
 {
     // Metodo di entrata per esecuzione del codice
-    public static void Main()
+    public static void Main(string[] args)
     {
-       
 
+        /*
         Console.WriteLine("Inserisci il nome del cliente: "); 
         string customerName = Console.ReadLine(); 
 
@@ -52,7 +52,7 @@ public class Program // Questa è una classe
         Console.WriteLine("Totale finale: " + total + " euro");
 
         Console.WriteLine();
-
+      
         if(total <= 0)
         {
             Console.WriteLine("Errore: ordine non valido.");
@@ -67,10 +67,19 @@ public class Program // Questa è una classe
         }
 
         Console.WriteLine("Grazie per il tuo ordine!");
-        
-        
+        */
+
+        Vehicle vehicle = new Vehicle("abc");
+        // vehicle.LicensePlate = "abc";
+        string license = vehicle.LicensePlate;
+
+        Console.WriteLine(license);
 
 
 
-        }
+
+
+
+
+    }
 }
