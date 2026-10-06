@@ -69,17 +69,9 @@ public class Program // Questa è una classe
         Console.WriteLine("Grazie per il tuo ordine!");
         */
 
-        Vehicle vehicle = new Vehicle("abc");
-        // vehicle.LicensePlate = "abc";
-        string license = vehicle.LicensePlate;
-
-        Console.WriteLine(license);
-
-
-
-
-
-
+        Enemy enemy= new Enemy();
+        enemy.Health = -1;
+        Console.WriteLine("Enemy health: " + enemy.Health);
 
     }
 }
