@@ -1,4 +1,5 @@
 ﻿using BlaisePascal.LessonsExample.Domain;
+using BlaisePascalLessonsExample.Domain;
 
 public class Program // Questa è una classe
 {
@@ -69,9 +70,27 @@ public class Program // Questa è una classe
         Console.WriteLine("Grazie per il tuo ordine!");
         */
 
-        Enemy enemy= new Enemy();
+
+
+        /* Enemy enemy= new Enemy();
         enemy.Health = -1;
-        Console.WriteLine("Enemy health: " + enemy.Health);
+        Console.WriteLine("Enemy health: " + enemy.Health); */
+
+
+        try
+        {
+            Vehicle vehicle1 = new Vehicle("AB123CD", 10000, 50, 75);
+            Console.WriteLine(vehicle1.LicensePlate);
+            Console.WriteLine(vehicle1.OdometerKm);
+            Console.WriteLine(vehicle1.DailyRate);
+            Console.WriteLine(vehicle1.FuelLevelPercentage);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+
+        }
 
     }
 }
+
