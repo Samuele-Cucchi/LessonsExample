@@ -59,5 +59,6 @@
             setHealth(_health - damage);
         }
 
+      }
 
     }

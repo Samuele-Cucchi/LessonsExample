@@ -5,6 +5,7 @@ using System.Formats.Tar;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace BlaisePascalLessonsExample.Domain
 {
@@ -21,11 +22,23 @@ namespace BlaisePascalLessonsExample.Domain
     /// </summary>
     public class Vehicle
     {
+        public string _licensePlate;
         private int _odometerKm;
         private double _dailyRate;
         private double _fuelLevelPercentage;
             
-        public string LicensePlate { get; private set; } // TODO: validazione della targa
+        public string LicensePlate 
+        {
+            get { return _licensePlate; }
+            private set
+            {
+                string licensePlate = value?.Trim().ToUpper();
+                if(!Regex.IsMatch(licensePlate, @"^[A-Z]{2}[0-9]{3}[A-Z]{2}$"))
+                {
+                    throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value} ");
+                }
+            }     
+        } // TODO: validazione della targa
         public int OdometerKm
         {
             get
